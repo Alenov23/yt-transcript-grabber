@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>YT Transcript Grabber</h1>
+      <p id="status" class="subtitle">Waiting for YouTube video…</p>
+    </header>
+
+    <div id="controls" class="controls" hidden>
+      <div class="row">
+        <label class="lang-label" for="language">Language</label>
+        <select id="language" class="lang-select"></select>
+      </div>
+
+      <div class="options">
+        <label class="checkbox">
+          <input type="checkbox" id="show-timestamps" />
+          <span>Show timestamps</span>
+        </label>
+      </div>
+
+      <button id="fetch" class="btn btn-primary">
+        <span class="btn-label">Get transcript</span>
+        <span class="spinner" hidden></span>
+      </button>
+
+      <div id="error" class="error" hidden></div>
+    </div>
+
+    <textarea
+      id="result"
+      class="result"
+      placeholder="The transcript will appear here. You can edit it."
+    ></textarea>
+
+    <div class="actions">
+      <button id="copy" class="btn btn-secondary" disabled>Copy</button>
+      <button id="download-txt" class="btn btn-secondary" disabled>.txt</button>
+      <button id="download-srt" class="btn btn-secondary" disabled>.srt</button>
+    </div>
+
+    <p id="meta" class="meta" hidden></p>
+  </main>
+
+  <script src="popup.js"></script>
+</body>
+</html>
